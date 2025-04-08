@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestaoBiblioteca
 {
-    class Livros
+    class Livro
     { 
         public string Nome { get; set; }
         public string Autor { get; set; }
