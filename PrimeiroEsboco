@@ -1,0 +1,116 @@
+Entidades / Objectos
+
+Utilizador - introduzir Nome/Contacto, é quem faz os emprestimos, 
+
+Funcionario - Introduzir nome? / introducao de livros
+
+Livro - uma classe para o livro, onde armazena os detalhes do livro ?
+
+
+
++-------------------+                
+|      Livro        |
++-------------------+
+| - Titulo : string |
+| - Autor : string  |
+| - Ano : int       |
+| - Exemplares : int|
++-------------------+
+
+
++----------------------------+
+|        Funcionario         |
++----------------------------+
+| - CodigoFuncionario : int  
+|
++----------------------------+
+| + AdicionarLivro(...)      |
+| + RemoverLivro(...)        |
++----------------------------+
+        ▲
+        │
++-------------------------+
+|      Utilizador         |
++-------------------------+
+| - Nome : string         |
+| - Endereco : string     |
+| - Telefone : string     |
+| - ID : int              |
++-------------------------+
+
+
+
++-------------------------------+
+|          Emprestimo           |
++-------------------------------+
+| - Utilizador : Utilizador     |
+| - Livro : Livro               |
+| - DataEmprestimo : DateTime   |
+| - DataDevolucao : DateTime    |
++-------------------------------+
+
+
++-------------------------------------+
+|             Biblioteca/sistema      |
++-------------------------------------+
+| - Livros : List<Livro>              |
+| - Utilizadores : List<Utilizador>   |
+| - Funcionarios : List<Funcionario>  |
+| - Emprestimos : List<Emprestimo>    |
++-------------------------------------+
+| + RegistarLivro(Funcionario, ...)   |
+| + RemoverLivro(Funcionario, ...)    |
+| + EmprestarLivro(Utilizador, ...)   |
+| + DevolverLivro(Utilizador, ...)    |
+| + ListarLivrosDisponiveis()        |
+| + GerarRelatorioEmprestimos()      |
++-------------------------------------+
+
+
+
+
+ Relações:
+
+Biblioteca
+
+
+List<Livro> → Uma biblioteca tem vários livros.
+
+List<Utilizador> → Uma biblioteca tem vários utilizadores.
+
+List<Funcionario> → Uma biblioteca tem vários funcionários.
+
+List<Emprestimo> → Uma biblioteca guarda todos os empréstimos.
+
+Funcionario →  Utilizador
+
+Relação de Herança:
+
+Funcionario herda de Utilizador.
+
+Ou seja, todo funcionário é um utilizador, mas com mais permissões e métodos adicionais (AdicionarLivro(), RemoverLivro(), etc.).
+
+
+
+
+Emprestimo
+
+Associação:
+
+Contém uma instância de Livro.
+
+Contém uma instância de Utilizador.
+
+Guarda também as datas (DataEmprestimo, DataDevolucao).
+
+Isto significa que um empréstimo liga um utilizador a um livro por um certo período.
+
+
+
+
+
+Utilizador
+Pode estar ligado a múltiplos Emprestimos (1 utilizador pode pedir vários livros).
+
+Armazenado dentro da Biblioteca.
+
