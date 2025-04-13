@@ -6,23 +6,31 @@ using System.Threading.Tasks;
 
 namespace GestaoBiblioteca
 {
-    class Funcionario
+    class Funcionario : Utilizador
     {
-        public string Nome { get; set; }
-        public string Morada { get; set; }
-        public string Telefone { get; set; }
-        public int CodigoFuncionario { get; set; }
 
+        private static int proximoCodFuncionario = 101; //Contador estatico APENAS para Funcionario
 
+        public int CodigoFuncionario { get; private set; }
+        public string Cargo { get; set; }
 
-        public void AdicionarLivro()
+        public Funcionario(string nome, string morada, string telefone, string cargo) : base (nome, morada, telefone)
         {
-
+            CodigoFuncionario = proximoCodFuncionario++;
+            Cargo = cargo;
         }
 
-        public void RemoverLivro()
-        {
 
+        //Dois metodos para contruir uma string de apresentação de cada objeto. Desta maneira ja não precisamos do metodo ExibirInformacoes
+
+        public override string ObterTipo()
+        {
+            return "Funcionário";
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"| Código: {CodigoFuncionario} | Cargo: {Cargo}";
         }
 
     }
