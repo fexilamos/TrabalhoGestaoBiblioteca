@@ -68,6 +68,7 @@ namespace GestaoBiblioteca
                 Console.Write("Escolha a opção que pretende: ");
                 int opcao = int.Parse(Console.ReadLine());
 
+
                 switch (opcao)
                 {
                     case 1:
@@ -133,6 +134,19 @@ namespace GestaoBiblioteca
         {
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
+        }
+        private void RegistarNovoUtilizador(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Registar Novo Utilizador ---");
+            Console.Write("Nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Morada: ");
+            string morada = Console.ReadLine();
+            Console.Write("Telefone: ");
+            string telefone = Console.ReadLine();
+
+            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
+            Console.WriteLine("Utilizador registado com sucesso!");
         }
     }
     
