@@ -148,6 +148,40 @@ namespace GestaoBiblioteca
             bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
             Console.WriteLine("Utilizador registado com sucesso!");
         }
+
+        private void RegistarNovoFuncionario(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Registar Novo Funcionário ---");
+            Console.Write("Nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Morada: ");
+            string morada = Console.ReadLine();
+            Console.Write("Telefone: ");
+            string telefone = Console.ReadLine();
+            Funcionario funcionario = new Funcionario(nome, morada, telefone);
+            bibliotecaSistema.AdicionarFuncionario(funcionario);
+            Console.WriteLine("Funcionário registado com sucesso!");
+        }
+
+        private void ListarUtilizadores(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Listar Utilizadores ---");
+            List<Utilizador> utilizadores = bibliotecaSistema.ObterUtilizadores();
+            if (utilizadores.Count == 0)
+            {
+                Console.WriteLine("Não há utilizadores registados.");
+            }
+            else
+            {
+                foreach (var utilizador in utilizadores)
+                {
+                    Console.WriteLine(utilizador);
+                }
+            }
+        }
+
+
+
     }
     
 }

@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\bibliotecasistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\bibliotecasistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\utilizadorservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\utilizadorservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\funcionarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\funcionarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\bibliotecasistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\bibliotecasistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|c:\\users\\cesae\\desktop\\repositorio git\\trabalhogestaobiblioteca\\gestaobiblioteca\\gestaobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB4ED9EA-6E98-4D48-A533-8106226092B0}|GestaoBiblioteca\\GestaoBiblioteca.csproj|solutionrelative:gestaobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,30 +42,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "UtilizadorServico.cs",
+              "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\UtilizadorServico.cs",
+              "RelativeDocumentMoniker": "GestaoBiblioteca\\UtilizadorServico.cs",
+              "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\UtilizadorServico.cs",
+              "RelativeToolTip": "GestaoBiblioteca\\UtilizadorServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:23:39.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FuncionarioServico.cs",
+              "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\FuncionarioServico.cs",
+              "RelativeDocumentMoniker": "GestaoBiblioteca\\FuncionarioServico.cs",
+              "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\FuncionarioServico.cs*",
+              "RelativeToolTip": "GestaoBiblioteca\\FuncionarioServico.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:12:05.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Utilizador.cs",
               "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Utilizador.cs",
               "RelativeDocumentMoniker": "GestaoBiblioteca\\Utilizador.cs",
               "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Utilizador.cs",
               "RelativeToolTip": "GestaoBiblioteca\\Utilizador.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:15:33.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Livro.cs",
               "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Livro.cs",
               "RelativeDocumentMoniker": "GestaoBiblioteca\\Livro.cs",
               "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Livro.cs",
               "RelativeToolTip": "GestaoBiblioteca\\Livro.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:15:31.745Z",
               "EditorCaption": ""
@@ -70,40 +104,40 @@
               "RelativeDocumentMoniker": "GestaoBiblioteca\\Funcionario.cs",
               "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Funcionario.cs",
               "RelativeToolTip": "GestaoBiblioteca\\Funcionario.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:15:30.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "BibliotecaSistema.cs",
               "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\BibliotecaSistema.cs",
               "RelativeDocumentMoniker": "GestaoBiblioteca\\BibliotecaSistema.cs",
               "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\BibliotecaSistema.cs",
               "RelativeToolTip": "GestaoBiblioteca\\BibliotecaSistema.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:15:28.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Emprestimo.cs",
               "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Emprestimo.cs",
               "RelativeDocumentMoniker": "GestaoBiblioteca\\Emprestimo.cs",
               "ToolTip": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Emprestimo.cs",
               "RelativeToolTip": "GestaoBiblioteca\\Emprestimo.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:15:27.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\Program.cs",
               "RelativeDocumentMoniker": "GestaoBiblioteca\\Program.cs",
@@ -111,8 +145,7 @@
               "RelativeToolTip": "GestaoBiblioteca\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:43:56.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T10:43:56.006Z"
             }
           ]
         }
