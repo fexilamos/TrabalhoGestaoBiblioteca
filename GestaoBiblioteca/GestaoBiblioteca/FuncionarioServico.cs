@@ -21,7 +21,7 @@ namespace GestaoBiblioteca
                 Console.WriteLine("[5] Gestão de Livros");
                 Console.WriteLine("[6] Gestão de Empréstimos");
                 Console.WriteLine("[0] Voltar ao Menu Principal");
-                Console.WriteLine("Escolha a opção que prentende: ");
+                Console.Write("Escolha a opção que pretende: ");
                 int opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
@@ -48,13 +48,14 @@ namespace GestaoBiblioteca
                         voltar = true;
                         break;
                     default:
-                        Console.WriteLine("Opção inválida");
+                        Console.WriteLine("Opção inválida.");
                         break;
                 }
-                if (!voltar) PressioneParaContinuar();
 
+                if (!voltar) PressioneParaContinuar();
             }
         }
+
         private void MostrarMenusLivros(BibliotecaSistema bibliotecaSistema)
         {
             bool voltar = false;
@@ -68,25 +69,25 @@ namespace GestaoBiblioteca
                 Console.Write("Escolha a opção que pretende: ");
                 int opcao = int.Parse(Console.ReadLine());
 
-
                 switch (opcao)
                 {
                     case 1:
-                        AdicionarLivro(bibliotecaSistema); 
+                        AdicionarLivro(bibliotecaSistema);
                         break;
                     case 2:
-                        ListarLivros(bibliotecaSistema, false);// Chama o método de listar, passando 'false' para indicar que quer TODOS os livros.
+                        ListarLivros(bibliotecaSistema, false);
                         break;
                     case 3:
-                        ListarLivros(bibliotecaSistema, true);// Chama o método de listar, passando 'true' para indicar que quer APENAS os DISPONÍVEIS.
+                        ListarLivros(bibliotecaSistema, true);
                         break;
                     case 0:
-                        voltar = true; 
+                        voltar = true;
                         break;
                     default:
                         Console.WriteLine("Opção inválida.");
                         break;
                 }
+
                 if (!voltar) PressioneParaContinuar();
             }
         }
@@ -108,16 +109,16 @@ namespace GestaoBiblioteca
                 switch (opcao)
                 {
                     case 1:
-                        RealizarEmprestimo(bibliotecaSistema); 
+                        RealizarEmprestimo(bibliotecaSistema);
                         break;
                     case 2:
-                        RegistarDevolucao(bibliotecaSistema); 
+                        RegistarDevolucao(bibliotecaSistema);
                         break;
                     case 3:
-                        ListarEmprestimos(bibliotecaSistema, true); 
+                        ListarEmprestimos(bibliotecaSistema, true);
                         break;
                     case 4:
-                        ListarEmprestimos(bibliotecaSistema, false); 
+                        ListarEmprestimos(bibliotecaSistema, false);
                         break;
                     case 0:
                         voltar = true;
@@ -126,6 +127,7 @@ namespace GestaoBiblioteca
                         Console.WriteLine("Opção inválida.");
                         break;
                 }
+
                 if (!voltar) PressioneParaContinuar();
             }
         }
@@ -135,6 +137,7 @@ namespace GestaoBiblioteca
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
         }
+
         private void RegistarNovoUtilizador(BibliotecaSistema bibliotecaSistema)
         {
             Console.WriteLine("\n--- Registar Novo Utilizador ---");
@@ -148,6 +151,147 @@ namespace GestaoBiblioteca
             bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
             Console.WriteLine("Utilizador registado com sucesso!");
         }
+
+        private void RegistarNovoFuncionario(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Registar Novo Funcionário ---");
+            Console.Write("Nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Morada: ");
+            string morada = Console.ReadLine();
+            Console.Write("Telefone: ");
+            string telefone = Console.ReadLine();
+            Console.Write("Cargo: ");
+            string cargo = Console.ReadLine();
+
+            bibliotecaSistema.AdicionarFuncionario(nome, morada, telefone, cargo);
+            Console.WriteLine("Funcionário registado com sucesso!");
+        }
+
+        private void ListarUtilizadores(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Lista de Utilizadores ---");
+            var lista = bibliotecaSistema.ObterUtilizadores();
+
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Nenhum utilizador registado.");
+            }
+            else
+            {
+                foreach (var utilizador in lista)
+                {
+                    Console.WriteLine(utilizador);
+                }
+            }
+        }
+
+        private void ListarFuncionarios(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Lista de Funcionários ---");
+            var lista = bibliotecaSistema.ObterFuncionarios();
+
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Nenhum funcionário registado.");
+            }
+            else
+            {
+                foreach (var funcionario in lista)
+                {
+                    Console.WriteLine(funcionario);
+                }
+            }
+        }
+
+        private void AdicionarLivro(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Adicionar Novo Livro ---");
+            Console.Write("Título: ");
+            string titulo = Console.ReadLine();
+            Console.Write("Autor: ");
+            string autor = Console.ReadLine();
+            Console.Write("Ano de publicação: ");
+            int ano = int.Parse(Console.ReadLine());
+            Console.Write("Número de exemplares: ");
+            int exemplares = int.Parse(Console.ReadLine());
+
+            bibliotecaSistema.AdicionarLivro(titulo, autor, ano, exemplares);
+            Console.WriteLine("Livro adicionado com sucesso!");
+        }
+
+        private void ListarLivros(BibliotecaSistema bibliotecaSistema, bool apenasDisponiveis)
+        {
+            Console.WriteLine($"\n--- {(apenasDisponiveis ? "Livros Disponíveis" : "Todos os Livros")} ---");
+
+            var lista = apenasDisponiveis ? bibliotecaSistema.ObterLivrosDisponiveis() : bibliotecaSistema.ObterTodosLivros();
+
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Nenhum livro encontrado.");
+            }
+            else
+            {
+                foreach (var livro in lista)
+                {
+                    Console.WriteLine(livro);
+                }
+            }
+        }
+
+        private void RealizarEmprestimo(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Realizar Novo Empréstimo ---");
+
+            Console.Write("ID do Utilizador: ");
+            int utilizadorID = int.Parse(Console.ReadLine());
+
+            Console.Write("ID do Livro: ");
+            int livroID = int.Parse(Console.ReadLine());
+
+            bool sucesso = bibliotecaSistema.FazerEmprestimo(livroID, utilizadorID);
+
+            if (sucesso)
+                Console.WriteLine("Empréstimo realizado com sucesso!");
+            else
+                Console.WriteLine("Não foi possível realizar o empréstimo. Verifique a disponibilidade ou o limite de empréstimos.");
+        }
+
+        private void RegistarDevolucao(BibliotecaSistema bibliotecaSistema)
+        {
+            Console.WriteLine("\n--- Registar Devolução de Livro ---");
+
+            Console.Write("ID do Utilizador: ");
+            int utilizadorID = int.Parse(Console.ReadLine());
+
+            Console.Write("ID do Livro: ");
+            int livroID = int.Parse(Console.ReadLine());
+
+            bool sucesso = bibliotecaSistema.RegistarDevolucao(livroID, utilizadorID);
+
+            if (sucesso)
+                Console.WriteLine("Devolução registada com sucesso!");
+            else
+                Console.WriteLine("Não foi possível registar a devolução. Verifique os dados introduzidos.");
+        }
+
+        private void ListarEmprestimos(BibliotecaSistema bibliotecaSistema, bool apenasAtivos)
+        {
+            Console.WriteLine($"\n--- {(apenasAtivos ? "Empréstimos Ativos" : "Todos os Empréstimos")} ---");
+
+            var lista = bibliotecaSistema.ObterEmprestimos(apenasAtivos);
+
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Nenhum empréstimo encontrado.");
+            }
+            else
+            {
+                foreach (var emprestimo in lista)
+                {
+                    Console.WriteLine(emprestimo);
+                }
+            }
+        }
     }
-    
 }
