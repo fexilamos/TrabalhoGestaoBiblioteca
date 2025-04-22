@@ -36,6 +36,7 @@ namespace GestaoBiblioteca
         {
             return $"ID: {ID} | Nome: {Nome} ({ObterTipo()}) | Morada: {Morada} | Telefone: {Telefone}";
         }
+        
       
 
 

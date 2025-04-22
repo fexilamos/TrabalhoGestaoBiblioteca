@@ -54,6 +54,7 @@ namespace GestaoBiblioteca
             // Poderia adicionar lógica para não exceder um nº total se o tivesse guardado.
             Exemplares++;
         }
+        
     }
 
     
