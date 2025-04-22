@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "WqpZ1ZzR5p8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
+=======
+  "dgSpecHash": "2GLirCfM+5M=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
+>>>>>>> Struct
   "expectedPackageFiles": [],
   "logs": []
 }

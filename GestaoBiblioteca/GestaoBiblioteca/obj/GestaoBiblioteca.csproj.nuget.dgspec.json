@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj": {}
   },
   "projects": {
@@ -12,12 +13,25 @@
         "projectPath": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
         "packagesPath": "C:\\Users\\Cesae\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Cesae\\Desktop\\Repositorio GIT\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\obj\\",
+=======
+    "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
+        "projectName": "GestaoBiblioteca",
+        "projectPath": "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
+        "packagesPath": "C:\\Users\\STUDIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\STUDIO\\Desktop\\Curso\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\obj\\",
+>>>>>>> Struct
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STUDIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
