@@ -52,16 +52,60 @@ namespace GestaoBiblioteca
 
         private void RegistarNovoUtilizador(BibliotecaSistema bibliotecaSistema)
         {
-            Console.WriteLine("\n--- Registar-se como Novo Utilizador ---");
-            Console.Write("Nome: ");
-            string nome = Console.ReadLine();
-            Console.Write("Morada: ");
-            string morada = Console.ReadLine();
-            Console.Write("Telefone: ");
-            string telefone = Console.ReadLine();
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("\n--- Registar-se como Novo Utilizador ---");
 
-            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
-            Console.WriteLine("Utilizador registado com sucesso!");
+                // Validação do Nome
+                string nome;
+                do
+                {
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(nome))
+                    {
+                        Console.WriteLine("O nome não pode estar vazio. Por favor, insira um nome válido.");
+                    }
+                } while (string.IsNullOrWhiteSpace(nome));
+
+                // Validação da Morada
+                string morada;
+                do
+                {
+                    Console.Write("Morada: ");
+                    morada = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(morada))
+                    {
+                        Console.WriteLine("A morada não pode estar vazia. Por favor, insira uma morada válida.");
+                    }
+                } while (string.IsNullOrWhiteSpace(morada));
+
+                // Validação do Telefone
+                string telefone;
+                do
+                {
+                    Console.Write("Telefone: ");
+                    telefone = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(telefone) || telefone.Length < 9)
+                    {
+                        Console.WriteLine("O telefone deve ter pelo menos 9 caracteres. Por favor, insira um telefone válido.");
+                    }
+                } while (string.IsNullOrWhiteSpace(telefone) || telefone.Length < 9);
+
+                bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
+                Console.WriteLine("Utilizador registado com sucesso!");
+
+                // Criação do ficheiro TXT
+                Console.WriteLine("Vou chamar o método para gerar o ficheiro TXT...");
+                var caminho = TxtHelper.GerarFichaUtilizador(nome, morada, telefone);
+                Console.WriteLine("Método chamado. Caminho devolvido: " + caminho);
+                Console.WriteLine("Ficha de utilizador em TXT gerada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao registrar novo utilizador: {ex.Message}");
+            }
         }
 
         private void ListarLivrosDisponiveis(BibliotecaSistema bibliotecaSistema)
