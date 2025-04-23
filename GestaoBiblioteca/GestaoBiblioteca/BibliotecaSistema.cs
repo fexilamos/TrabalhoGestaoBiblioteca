@@ -119,5 +119,31 @@ namespace GestaoBiblioteca
             else
                 return emprestimos;
         }
+
+        public Utilizador GetUtilizadorByID(int id)
+        {
+            foreach (var utilizador in utilizadores)
+            {
+                if (utilizador.ID == id)
+                {
+                    return utilizador;
+                }
+            }
+            return null;
+        }
+
+        public Livro GetLivroById(int id)
+        {
+
+            foreach (var livro in livros)
+            {
+                if (livro.ID == id)
+                {
+                    return livro;
+                }
+            }
+
+            return null;
+        }
     }
 }
