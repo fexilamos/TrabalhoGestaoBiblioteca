@@ -97,6 +97,18 @@ namespace GestaoBiblioteca
             if (livro != null)
                 livro.IncrementarDisponiveis();
 
+            // Calcular multa se o prazo de 3 dias foi excedido
+            if (DateTime.Now > emprestimo.DataDevolucaoPrevista)
+            {
+                int diasAtraso = (DateTime.Now - emprestimo.DataDevolucaoPrevista).Days;
+                decimal multa = diasAtraso * 1.0m; // 1 euro por dia de atraso
+                Console.WriteLine($"Multa devida: {multa:C} (Atraso de {diasAtraso} dias)");
+            }
+            else
+            {
+                Console.WriteLine("Devolução realizada dentro do prazo. Nenhuma multa aplicada.");
+            }
+
             return true;
         }
 
