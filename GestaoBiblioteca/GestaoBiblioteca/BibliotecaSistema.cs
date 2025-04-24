@@ -29,15 +29,15 @@ namespace GestaoBiblioteca
             livros.Add(livro);
         }
 
-        public void AdicionarUtilizador(string nome, string morada, string telefone)
+        public void AdicionarUtilizador(string nome, string morada, string telefone, string username, string password)
         {
-            Utilizador utilizador = new Utilizador(nome, morada, telefone);
+            Utilizador utilizador = new Utilizador(nome, morada, telefone, username, password);
             utilizadores.Add(utilizador);
         }
 
-        public void AdicionarFuncionario(string nome, string morada, string telefone, string cargo)
+        public void AdicionarFuncionario(string nome, string morada, string telefone, string cargo, string username, string password)
         {
-            Funcionario funcionario = new Funcionario(nome, morada, telefone, cargo);
+            Funcionario funcionario = new Funcionario(nome, morada, telefone, cargo, username, password);
             utilizadores.Add(funcionario);
         }
 
@@ -119,5 +119,20 @@ namespace GestaoBiblioteca
             else
                 return emprestimos;
         }
+        public Utilizador LoginUtilizador(string username, string password)
+        {
+            return utilizadores
+                .OfType<Utilizador>()
+        .FirstOrDefault(f => f.Username == username && f.Password == password);
+        }
+
+        public Funcionario LoginFuncionario(string username, string password)
+        {
+            // Verifica se o username existe entre os funcionários e se a password fornecida é "password"
+            return utilizadores
+               .OfType<Funcionario>()
+        .FirstOrDefault(f => f.Username == username && f.Password == password);
+        }
+
     }
 }

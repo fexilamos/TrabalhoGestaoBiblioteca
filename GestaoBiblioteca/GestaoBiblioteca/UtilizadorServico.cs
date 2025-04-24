@@ -59,8 +59,12 @@ namespace GestaoBiblioteca
             string morada = Console.ReadLine();
             Console.Write("Telefone: ");
             string telefone = Console.ReadLine();
+            Console.Write("Username: ");
+            string username= Console.ReadLine();
+            Console.Write("Password: ");
+            string password = LerPasswordComAsteriscos();
 
-            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
+            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone, username, password);
             Console.WriteLine("Utilizador registado com sucesso!");
         }
 
@@ -98,6 +102,62 @@ namespace GestaoBiblioteca
                 Console.WriteLine("Livro devolvido com sucesso!");
             else
                 Console.WriteLine("Erro ao devolver. Verifique os dados inseridos ou se o empréstimo está ativo.");
+        }
+        public void FazerLoginUtilizador(BibliotecaSistema bibliotecaSistema)
+        {
+            string username;
+            string password;
+            Utilizador utilizador = null;
+
+            do
+            {
+                Console.Write("\nUsername: ");
+                username = Console.ReadLine();
+                Console.Write("Password: ");
+                password = LerPasswordComAsteriscos();
+
+                utilizador = bibliotecaSistema.LoginUtilizador(username, password);
+
+                if (utilizador != null)
+                {
+                    Console.WriteLine($"Login bem-sucedido! Bem-vindo, {utilizador.Nome}.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Credenciais inválidas. Tente novamente.");
+                }
+
+            } while (true);
+        }
+        public string LerPasswordComAsteriscos()
+        {
+            string password = "";
+            ConsoleKeyInfo tecla;
+
+            do
+            {
+                tecla = Console.ReadKey(true);
+
+                if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
+                {
+                    password += tecla.KeyChar;
+                    Console.Write("*");
+                }
+                else if (tecla.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Substring(0, password.Length - 1);
+
+                    int cursorPos = Console.CursorLeft;
+                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
+                }
+
+            } while (tecla.Key != ConsoleKey.Enter);
+
+            Console.WriteLine();
+            return password;
         }
     }
 }

@@ -151,8 +151,12 @@ namespace GestaoBiblioteca
             string morada = Console.ReadLine();
             Console.Write("Telefone: ");
             string telefone = Console.ReadLine();
+            Console.Write("Username: ");
+            string username = Console.ReadLine();
+            Console.Write("Password: ");
+            string password = LerPasswordComAsteriscos();
 
-            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
+            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone, username, password);
             Console.WriteLine("Utilizador registado com sucesso!");
         }
 
@@ -168,8 +172,13 @@ namespace GestaoBiblioteca
             string telefone = Console.ReadLine();
             Console.Write("Cargo: ");
             string cargo = Console.ReadLine();
+            Console.Write("Username: ");
+            string username = Console.ReadLine();
+            Console.Write("Password: ");
+            string password = Console.ReadLine();
 
-            bibliotecaSistema.AdicionarFuncionario(nome, morada, telefone, cargo);
+
+            bibliotecaSistema.AdicionarFuncionario(nome, morada, telefone, cargo, username, password);
             Console.WriteLine("Funcionário registado com sucesso!");
         }
 
@@ -306,6 +315,63 @@ namespace GestaoBiblioteca
                     Console.WriteLine(emprestimo);
                 }
             }
+
+        }
+        public void FazerLoginFuncionario(BibliotecaSistema bibliotecaSistema)
+        {
+            string username;
+            string password;
+            Funcionario funcionario = null;
+
+            do
+            {
+                Console.Write("\nUsername: ");
+                username = Console.ReadLine();
+                Console.Write("Password: ");
+                password = LerPasswordComAsteriscos();
+
+                funcionario = bibliotecaSistema.LoginFuncionario(username, password);
+
+                if (funcionario != null)
+                {
+                    Console.WriteLine($"Login bem-sucedido! Bem-vindo, {funcionario.Nome}.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Credenciais inválidas. Tente novamente.");
+                }
+
+            } while (true);
+        }
+        private string LerPasswordComAsteriscos()
+        {
+            string password = "";
+            ConsoleKeyInfo tecla;
+
+            do
+            {
+                tecla = Console.ReadKey(true);
+
+                if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
+                {
+                    password += tecla.KeyChar;
+                    Console.Write("*");
+                }
+                else if (tecla.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Substring(0, password.Length - 1);
+
+                    int cursorPos = Console.CursorLeft;
+                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
+                }
+
+            } while (tecla.Key != ConsoleKey.Enter);
+
+            Console.WriteLine();
+            return password;
         }
     }
 }
