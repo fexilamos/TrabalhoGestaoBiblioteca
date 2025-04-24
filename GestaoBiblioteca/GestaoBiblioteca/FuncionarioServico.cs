@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GestaoBiblioteca
 {
     internal class FuncionarioServico
@@ -143,21 +144,58 @@ namespace GestaoBiblioteca
 
         private void RegistarNovoUtilizador(BibliotecaSistema bibliotecaSistema)
         {
-            Console.Clear();
-            Console.WriteLine("\n--- Registar Novo Utilizador ---");
-            Console.Write("Nome: ");
-            string nome = Console.ReadLine();
-            Console.Write("Morada: ");
-            string morada = Console.ReadLine();
-            Console.Write("Telefone: ");
-            string telefone = Console.ReadLine();
-            Console.Write("Username: ");
-            string username = Console.ReadLine();
-            Console.Write("Password: ");
-            string password = LerPasswordComAsteriscos();
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("\n--- Registar Novo Utilizador ---");
 
-            bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone, username, password);
-            Console.WriteLine("Utilizador registado com sucesso!");
+                // Validação do Nome
+                string nome;
+                do
+                {
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(nome))
+                    {
+                        Console.WriteLine("O nome não pode estar vazio. Por favor, insira um nome válido.");
+                    }
+                } while (string.IsNullOrWhiteSpace(nome));
+
+                // Validação da Morada
+                string morada;
+                do
+                {
+                    Console.Write("Morada: ");
+                    morada = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(morada))
+                    {
+                        Console.WriteLine("A morada não pode estar vazia. Por favor, insira uma morada válida.");
+                    }
+                } while (string.IsNullOrWhiteSpace(morada));
+
+                // Validação do Telefone
+                string telefone;
+                do
+                {
+                    Console.Write("Telefone: ");
+                    telefone = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(telefone) || telefone.Length < 9)
+                    {
+                        Console.WriteLine("O telefone deve ter pelo menos 9 caracteres. Por favor, insira um telefone válido.");
+                    }
+                } while (string.IsNullOrWhiteSpace(telefone) || telefone.Length < 9);
+
+                bibliotecaSistema.AdicionarUtilizador(nome, morada, telefone);
+                Console.WriteLine("Utilizador registado com sucesso!");
+                //Console.WriteLine("Vou chamar o método para gerar o ficheiro TXT...");
+                var caminho = TxtHelper.GerarFichaUtilizador(nome, morada, telefone);
+                Console.WriteLine("Método chamado. Caminho devolvido: " + caminho);
+                Console.WriteLine("Ficha de utilizador gerada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao registrar novo utilizador: {ex.Message}");
+            }
         }
 
         private void RegistarNovoFuncionario(BibliotecaSistema bibliotecaSistema)
@@ -172,13 +210,8 @@ namespace GestaoBiblioteca
             string telefone = Console.ReadLine();
             Console.Write("Cargo: ");
             string cargo = Console.ReadLine();
-            Console.Write("Username: ");
-            string username = Console.ReadLine();
-            Console.Write("Password: ");
-            string password = Console.ReadLine();
 
-
-            bibliotecaSistema.AdicionarFuncionario(nome, morada, telefone, cargo, username, password);
+            bibliotecaSistema.AdicionarFuncionario(nome, morada, telefone, cargo);
             Console.WriteLine("Funcionário registado com sucesso!");
         }
 
@@ -258,24 +291,65 @@ namespace GestaoBiblioteca
 
         private void RealizarEmprestimo(BibliotecaSistema bibliotecaSistema)
         {
-            Console.Clear();
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("\n--- Realizar Novo Empréstimo ---");
 
-            Console.WriteLine("\n--- Realizar Novo Empréstimo ---");
+                // Validação do ID do Utilizador
+                int utilizadorID;
+                do
+                {
+                    Console.Write("ID do Utilizador: ");
+                    string input = Console.ReadLine();
+                    if (!int.TryParse(input, out utilizadorID) || utilizadorID <= 0)
+                    {
+                        Console.WriteLine("O ID do utilizador deve ser um número inteiro positivo. Por favor, tente novamente.");
+                    }
+                } while (utilizadorID <= 0);
 
-            Console.Write("ID do Utilizador: ");
-            int utilizadorID = int.Parse(Console.ReadLine());
+                // Validação do ID do Livro
+                int livroID;
+                do
+                {
+                    Console.Write("ID do Livro: ");
+                    string input = Console.ReadLine();
+                    if (!int.TryParse(input, out livroID) || livroID <= 0)
+                    {
+                        Console.WriteLine("O ID do livro deve ser um número inteiro positivo. Por favor, tente novamente.");
+                    }
+                } while (livroID <= 0);
 
-            Console.Write("ID do Livro: ");
-            int livroID = int.Parse(Console.ReadLine());
+                bool sucesso = bibliotecaSistema.FazerEmprestimo(livroID, utilizadorID);
 
-            bool sucesso = bibliotecaSistema.FazerEmprestimo(livroID, utilizadorID);
+                if (sucesso)
+                {
+                    Console.WriteLine("Empréstimo realizado com sucesso!");
 
-            if (sucesso)
-                Console.WriteLine("Empréstimo realizado com sucesso!");
-            else
-                Console.WriteLine("Não foi possível realizar o empréstimo. Verifique a disponibilidade ou o limite de empréstimos.");
+                    // Buscar dados do utilizador e do livro:
+                    var utilizador = bibliotecaSistema.ObterUtilizadores().FirstOrDefault(u => u.ID == utilizadorID);
+                    var livro = bibliotecaSistema.ObterTodosLivros().FirstOrDefault(l => l.ID == livroID);
+
+                    if (utilizador != null && livro != null)
+                    {
+                        TxtHelper.GerarReciboEmprestimo(utilizador.Nome, livro.Titulo, DateTime.Now);
+                        Console.WriteLine("Recibo em TXT gerado com sucesso!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Não foi possível gerar o recibo em TXT (dados não encontrados).");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Não foi possível realizar o empréstimo. Verifique a disponibilidade ou o limite de empréstimos.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao realizar empréstimo: {ex.Message}");
+            }
         }
-
         private void RegistarDevolucao(BibliotecaSistema bibliotecaSistema)
         {
             Console.Clear();
@@ -315,63 +389,6 @@ namespace GestaoBiblioteca
                     Console.WriteLine(emprestimo);
                 }
             }
-
-        }
-        public void FazerLoginFuncionario(BibliotecaSistema bibliotecaSistema)
-        {
-            string username;
-            string password;
-            Funcionario funcionario = null;
-
-            do
-            {
-                Console.Write("\nUsername: ");
-                username = Console.ReadLine();
-                Console.Write("Password: ");
-                password = LerPasswordComAsteriscos();
-
-                funcionario = bibliotecaSistema.LoginFuncionario(username, password);
-
-                if (funcionario != null)
-                {
-                    Console.WriteLine($"Login bem-sucedido! Bem-vindo, {funcionario.Nome}.");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Credenciais inválidas. Tente novamente.");
-                }
-
-            } while (true);
-        }
-        private string LerPasswordComAsteriscos()
-        {
-            string password = "";
-            ConsoleKeyInfo tecla;
-
-            do
-            {
-                tecla = Console.ReadKey(true);
-
-                if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
-                {
-                    password += tecla.KeyChar;
-                    Console.Write("*");
-                }
-                else if (tecla.Key == ConsoleKey.Backspace && password.Length > 0)
-                {
-                    password = password.Substring(0, password.Length - 1);
-
-                    int cursorPos = Console.CursorLeft;
-                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
-                    Console.Write(" ");
-                    Console.SetCursorPosition(cursorPos - 1, Console.CursorTop);
-                }
-
-            } while (tecla.Key != ConsoleKey.Enter);
-
-            Console.WriteLine();
-            return password;
         }
     }
 }

@@ -29,15 +29,15 @@ namespace GestaoBiblioteca
             livros.Add(livro);
         }
 
-        public void AdicionarUtilizador(string nome, string morada, string telefone, string username, string password)
+        public void AdicionarUtilizador(string nome, string morada, string telefone)
         {
-            Utilizador utilizador = new Utilizador(nome, morada, telefone, username, password);
+            Utilizador utilizador = new Utilizador(nome, morada, telefone);
             utilizadores.Add(utilizador);
         }
 
-        public void AdicionarFuncionario(string nome, string morada, string telefone, string cargo, string username, string password)
+        public void AdicionarFuncionario(string nome, string morada, string telefone, string cargo)
         {
-            Funcionario funcionario = new Funcionario(nome, morada, telefone, cargo, username, password);
+            Funcionario funcionario = new Funcionario(nome, morada, telefone, cargo);
             utilizadores.Add(funcionario);
         }
 
@@ -97,18 +97,6 @@ namespace GestaoBiblioteca
             if (livro != null)
                 livro.IncrementarDisponiveis();
 
-            // Calcular multa se o prazo de 3 dias foi excedido
-            if (DateTime.Now > emprestimo.DataDevolucaoPrevista)
-            {
-                int diasAtraso = (DateTime.Now - emprestimo.DataDevolucaoPrevista).Days;
-                decimal multa = diasAtraso * 1.0m; // 1 euro por dia de atraso
-                Console.WriteLine($"Multa devida: {multa:C} (Atraso de {diasAtraso} dias)");
-            }
-            else
-            {
-                Console.WriteLine("Devolução realizada dentro do prazo. Nenhuma multa aplicada.");
-            }
-
             return true;
         }
 
@@ -119,20 +107,5 @@ namespace GestaoBiblioteca
             else
                 return emprestimos;
         }
-        public Utilizador LoginUtilizador(string username, string password)
-        {
-            return utilizadores
-                .OfType<Utilizador>()
-        .FirstOrDefault(f => f.Username == username && f.Password == password);
-        }
-
-        public Funcionario LoginFuncionario(string username, string password)
-        {
-            // Verifica se o username existe entre os funcionários e se a password fornecida é "password"
-            return utilizadores
-               .OfType<Funcionario>()
-        .FirstOrDefault(f => f.Username == username && f.Password == password);
-        }
-
     }
 }

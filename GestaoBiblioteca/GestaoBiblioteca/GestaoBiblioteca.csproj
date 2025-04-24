@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Figgle" Version="0.5.1" />
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
   </ItemGroup>
 
 </Project>

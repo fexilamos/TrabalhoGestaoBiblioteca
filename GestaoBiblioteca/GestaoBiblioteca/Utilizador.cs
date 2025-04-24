@@ -16,17 +16,13 @@ namespace GestaoBiblioteca
         public string Morada { get; set; }
         public string Telefone { get; set; }
         public int ID { get; private set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
 
-        public Utilizador(string nome, string morada, string telefone, string username, string password)
+        public Utilizador(string nome, string morada, string telefone)
         {
             ID = proximoID++;
             Nome = nome;
             Morada = morada;
-            Telefone = telefone; 
-            Username = username;
-            Password = password;
+            Telefone = telefone;    
         }
 
         //Dois metodos para contruir uma string de apresentação de cada objeto. Desta maneira ja não precisamos do metodo ExibirInformacoes

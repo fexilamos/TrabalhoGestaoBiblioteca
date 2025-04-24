@@ -14,8 +14,7 @@ namespace GestaoBiblioteca
         public int CodigoFuncionario { get; private set; }
         public string Cargo { get; set; }
 
-        public Funcionario(string nome, string morada, string telefone, string cargo, string username, string password) 
-            : base (nome, morada, telefone, username, password)
+        public Funcionario(string nome, string morada, string telefone, string cargo) : base (nome, morada, telefone)
         {
             CodigoFuncionario = proximoCodFuncionario++;
             Cargo = cargo;

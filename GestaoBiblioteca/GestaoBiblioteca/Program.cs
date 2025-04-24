@@ -24,13 +24,13 @@ bibliotecaSistema.AdicionarLivro("Cem Anos de Solidão", "Gabriel García Márqu
 bibliotecaSistema.AdicionarLivro("O Livro do Desassossego", "Fernando Pessoa", 1982, 2);
 
 // Utilizadores
-bibliotecaSistema.AdicionarUtilizador("David Bruno", "Rua de Mafamude, 123", "912345678", "David Bruno", "password");
-bibliotecaSistema.AdicionarUtilizador("Rita Faria", "Av. da Liberdade, 456", "934567890", "Rita Faria", "password");
-bibliotecaSistema.AdicionarUtilizador("João Silva", "Rua da Alegria, 789", "945678901", "João Silva", "password");
+bibliotecaSistema.AdicionarUtilizador("David Bruno", "Rua de Mafamude, 123", "912345678");
+bibliotecaSistema.AdicionarUtilizador("Rita Faria", "Av. da Liberdade, 456", "934567890");
+bibliotecaSistema.AdicionarUtilizador("João Silva", "Rua da Alegria, 789", "945678901");
 
 // Funcionário
-bibliotecaSistema.AdicionarFuncionario("Ana Costa", "Travessa do Sol, 78", "926789123", "Bibliotecária", "Ana Costa", "password");
-bibliotecaSistema.AdicionarFuncionario("Pedro Santos", "Rua Nova, 12", "938765432", "Assistente", "Pedro Santos", "password");
+bibliotecaSistema.AdicionarFuncionario("Ana Costa", "Travessa do Sol, 78", "926789123", "Bibliotecária");
+bibliotecaSistema.AdicionarFuncionario("Pedro Santos", "Rua Nova, 12", "938765432", "Assistente");
 
             Console.WriteLine(
     FiggleFonts.Ogre.Render("Biblioteca"));
@@ -53,11 +53,9 @@ bibliotecaSistema.AdicionarFuncionario("Pedro Santos", "Rua Nova, 12", "93876543
                 switch (input)
                 {
                     case "1":
-                        funcionarioServico.FazerLoginFuncionario(bibliotecaSistema);
                         funcionarioServico.MenuFuncionario(bibliotecaSistema);
                         break;
                     case "2":
-                        utilizadorServico.FazerLoginUtilizador(bibliotecaSistema);
                         utilizadorServico.MenuUtilizador(bibliotecaSistema);
                         break;
                     case "0":
