@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RYygSby1lG0=",
+  "dgSpecHash": "Ie5KLitETFI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cesae\\Desktop\\TrabalhoGestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca\\GestaoBiblioteca.csproj",
+  "projectFilePath": "/Users/tiagocardona/Trabalho/TrabalhoGestaoBiblioteca/GestaoBiblioteca/GestaoBiblioteca/GestaoBiblioteca.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Cesae\\.nuget\\packages\\figgle\\0.5.1\\figgle.0.5.1.nupkg.sha512"
+    "/Users/tiagocardona/.nuget/packages/figgle/0.5.1/figgle.0.5.1.nupkg.sha512",
+    "/Users/tiagocardona/.nuget/packages/microsoft.netcore.app.ref/8.0.15/microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
+    "/Users/tiagocardona/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512",
+    "/Users/tiagocardona/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.15/microsoft.netcore.app.host.osx-arm64.8.0.15.nupkg.sha512"
   ],
   "logs": []
 }
