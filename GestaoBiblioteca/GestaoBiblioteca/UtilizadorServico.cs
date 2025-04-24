@@ -158,6 +158,7 @@ namespace GestaoBiblioteca
 
             Console.WriteLine();
             return password;
+            Console.WriteLine();
         }
     }
 }
